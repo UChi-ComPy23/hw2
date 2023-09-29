@@ -70,15 +70,7 @@ Keep in mind that the autograder is just doing some basic sanity checks, which i
 
 ### Some git/GitHub Tips
 
-On Homework 0, GitHub classroom sometimes didn't configure things correctly.  This is apparently a bug, and I have filed an issue with GitHub.
-
-To make things work as smooth as possible, please check:
-1. GitHub actions is enabled for your repository - you can check this in the actions tab.  This just requires clicking a button if it isn't enabled.  See [the template repository](https://github.com/caam37830/homework-1-template/actions) for example.  There is an action configured that checks for problems in the code and runs the autograder whenever you push code, which can give you quick feedback on if things aren't working properly.  You can always run the autograder tests by yourself without GitHub actions.
-2. Check that there is a feedback pull request created for your repository - if this hasn't happened contact the course staff, so we can do it manually.
-
 Also, make sure you don't delete the `.gitignore` file, `.github` folder, or `.git` folder.  These are "hidden" files that don't always show in file managers - you can view them in terminal using `ls -a`.  `.gitignore` keeps temporary files out of version control (like `__pycache__`, or `.ipynb_checkpoints`), and the `.github` folder contains information to run the GitHub actions for the repository discussed above.  The `.git` folder contains all the version control information for your repository.
-
-
 
 ## Problem 0
 
