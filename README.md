@@ -13,7 +13,7 @@ Please put plots and written answers in the Jupyter notebook [`answers.ipynb`](a
 ## Important Information
 
 ### Due Date
-This assignment is due Thursday, October 5 at 10pm Chicago time.
+This assignment is due Thursday, October 19 at 10pm Chicago time.
 
 You should make sure you have pushed your completed work to GitHub by this time.
 
