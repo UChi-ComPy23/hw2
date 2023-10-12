@@ -1,4 +1,4 @@
-# Homework 1 - Object Oriented Programming and Functions
+# Homework 2 - Object Oriented Programming and Functions
 
 In this homework you'll create a library of function classes which are related by class inheritance.  This is a common design pattern in a variety of packages, such as SciPy, SymPy, and PyTorch.  This is a group assignment, so you will practice working in a shared repository.
 
