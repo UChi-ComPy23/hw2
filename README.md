@@ -260,6 +260,35 @@ Make a plot that displays `sin(x)` as well as its degree-k taylor series for `k 
 
 Your plot should include labels for each line displayed, as well as a legend.
 
+
+## Problem 3 - Power Method
+
+In this homework question, you will explore a popular method for finding eigenvalues of matrices. When using this algorithm, we consider a matrix $A$ with eigenvalues satisfying
+$$ |\lambda_0|> |\lambda_1|\geq \ldots |\lambda_n|$$.
+If $x$ is a random vector, and $v_k = A^k x$ then $\frac{v_k}{\|v_k\|}$ will converge to the eigenvector with eigenvalue $\lambda_0$.
+
+### Part A - implement the power method
+Write a function
+```python
+def power_method(A, maxiter=1000, tol=1e-8):
+    """
+    Uses the power method to find the largest eigenvalue of A.
+    """
+    ...
+    return x, lam, iiter
+```
+which returns an estimate of the dominant eigenvector and eigenvalue. It should also return the number of iterations used. You should write the function to stop after maxiter iterations, or if $\|v_k \pm v_{k-1}\|<\texttt{tol}$. Why do we have to check both signs? (Hint: Consider $\lambda_0<0$.)
+
+Test your function on a function of the form by verifying that $\|Ax - \texttt{lam} x\|$ is comparable to your tolerance. Note that in some versions of Python, the power method will fail. If your `x` makings infinite, try changing to a newer version of python.
+
+### Part B - implement the inverse power method
+The traditional power method computes the largest eigenvalue of $A$. To find the smallest eigenvalue, we can use the observation that $\lambda(A) = (\lambda(A^{-1})^{-1}$, so the smallest eigenvalue of $A$ corresponds to the largest eigenvalue of $A^{-1}$. We can therefore apply the power method to $A^{-1}$ to find the smallest eigenvalue.
+
+Make a `LinearOperator` that uses the LU factorization of $A$ to apply $A^{-1}$ (recall we said that forming $A^{-1}$ directly was slow and inaccurate). Be sure that your code only computes the LU factorization once. 
+
+Use the `power_method` function and this `LinearOperator` to find the smallest eigenvalue and once again check that $\|Ax - \texttt{lam} x\|$ is comparable to your tolerance.
+
+
 ## Feedback
 
 If you'd like share how long it took you to complete this assignment, it will help adjust the difficulty for future assignments.  You're welcome to share additional feedback as well.
