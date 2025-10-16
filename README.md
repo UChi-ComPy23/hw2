@@ -282,9 +282,11 @@ def power_method(A, maxiter=1000, tol=1e-8):
     ...
     return x, lam, iiter
 ```
-which returns an estimate of the dominant eigenvector and eigenvalue. It should also return the number of iterations used. You should write the function to stop after maxiter iterations, or if $\|v_k \pm v_{k-1}\|<\texttt{tol}$. Why do we have to check both signs? (Hint: Consider $\lambda_0<0$.) You should also make sure to normalize $v_k$ at each step to avoid overflow errors. To estimate the eigenvalue, you should use the Rayleigh quotient: $\lambda = v^T A v / v^T v$.
+which returns an estimate of the dominant eigenvector and eigenvalue. It should also return the number of iterations used. You should write the function to stop after maxiter iterations, or if $\|v_k \pm v_{k-1}\|<\texttt{tol}$. Why do we have to check both signs? (Hint: Consider $\lambda_0<0$.) 
 
-Test your function on a function by verifying that $\|Ax - \texttt{lam}\\, x\|$ is comparable to your tolerance when `A = np.diag(ds) + 0.1*np.random.randn((n,n))`, where `ds = np.arange(n)` with `n=100`. This choice of matrix will have broadly distributed eigenvalues thanks to the [Gershgorin circle theorem](https://en.wikipedia.org/wiki/Gershgorin_circle_theorem)
+Make sure to normalize $v_k$ at each step to avoid overflow errors. To estimate the eigenvalue, use the Rayleigh quotient: $\lambda = v^T A v / v^T v$.
+
+Test your function on a function by verifying that $\\|Ax - \texttt{lam}\\, x\\|$ is comparable to your tolerance when `A = np.diag(ds) + 0.1*np.random.randn((n,n))`, where `ds = np.arange(n)` with `n=100`. This choice of matrix will have broadly distributed eigenvalues thanks to the [Gershgorin circle theorem](https://en.wikipedia.org/wiki/Gershgorin_circle_theorem)
 
 Note that in some versions of Python, rounding erros will cause the power method will fail. If your `x` become infinite, try changing to a newer version of python.
 
@@ -293,7 +295,7 @@ The traditional power method computes the largest eigenvalue of $A$. To find the
 
 Make a `LinearOperator` that uses the LU factorization of $A$ to apply $A^{-1}$ (recall we said that forming $A^{-1}$ directly was slow and inaccurate). Be sure that your code only computes the LU factorization once. 
 
-Use the `power_method` function and this `LinearOperator` to find the smallest eigenvalue and once again check that $\|Ax - \texttt{lam}\\, x\|$ is comparable to your tolerance.
+Use the `power_method` function and this `LinearOperator` to find the smallest eigenvalue and once again check that $\\|Ax - \texttt{lam}\\, x\\|$ is comparable to your tolerance.
 
 ### Part C - timings (10 points)
 
